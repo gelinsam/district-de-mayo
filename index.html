@@ -814,10 +814,35 @@
     .rumble-hero-img { width: 100%; max-width: 440px; margin: 0 auto 1.75rem; display: block; border-radius: 12px; border: 1px solid rgba(255,248,240,0.08); }
 
     /* Partner logos */
-    .partner-logos-row { display: flex; justify-content: center; align-items: center; gap: 3rem; flex-wrap: wrap; }
-    .partner-logo-img { height: 32px; opacity: 0.45; transition: opacity 0.3s ease; }
+    .partner-logos-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 3.5rem;
+      flex-wrap: wrap;
+    }
+    .partner-logos-row a,
+    .partner-logos-row .partner-name {
+      display: flex;
+      align-items: center;
+      height: 40px;
+    }
+    .partner-logo-img { height: 36px; opacity: 0.45; transition: opacity 0.3s ease; object-fit: contain; }
     .partner-logo-img.invert { filter: brightness(0) invert(1); }
     .partner-logo-img:hover { opacity: 0.8; }
+    .partner-text-logo {
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,248,240,0.2);
+      text-decoration: none;
+      transition: color 0.2s;
+      display: flex;
+      align-items: center;
+      height: 40px;
+    }
+    .partner-text-logo:hover { color: rgba(255,248,240,0.45); }
 
     /* Competitor grid */
     .competitors-label { font-size: 0.55rem; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(255,248,240,0.2); text-align: center; margin-top: 2rem; margin-bottom: 0.75rem; }
@@ -1037,10 +1062,10 @@
       <a href="https://www.margaritarumble.com" target="_blank" rel="noopener">
         <img src="https://images.squarespace-cdn.com/content/v1/585981092994ca0e245807ab/1482271672931-V0WLOFMM0OWBIA1H6GRY/mr_color_rv2.png?format=500w" alt="Margarita Rumble" class="partner-logo-img" loading="lazy">
       </a>
-      <a href="https://unionmarketdc.com" target="_blank" rel="noopener">
-        <img src="https://unionmarketdc.com/wp-content/uploads/2023/02/union-market-white.svg" alt="Union Market District" class="partner-logo-img invert" loading="lazy">
+      <a href="https://unionmarketdc.com" target="_blank" rel="noopener" class="partner-text-logo">Union Market District</a>
+      <a href="https://www.crafthospitality.com" target="_blank" rel="noopener">
+        <img src="craft-logo.png" alt="Craft Hospitality" class="partner-logo-img" loading="lazy">
       </a>
-      <a href="https://www.crafthospitality.com" target="_blank" rel="noopener" class="partner-name">Craft Hospitality</a>
     </div>
   </section>
 
