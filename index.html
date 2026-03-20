@@ -150,8 +150,8 @@
       font-family: 'Dela Gothic One', cursive;
       font-size: clamp(3.5rem, 10vw, 7rem);
       line-height: 0.95;
-      margin-bottom: 1.5rem;
       padding-bottom: 0.15em;
+      margin-bottom: 1.5rem;
     }
 
     .hero h1 .district {
@@ -167,12 +167,12 @@
 
     .hero h1 .de-mayo {
       display: block;
+      padding-bottom: 0.08em;
       background: linear-gradient(180deg, var(--gold) 0%, var(--orange) 55%, #E8553D 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
       filter: drop-shadow(2px 3px 0 rgba(196,99,61,0.4));
-      padding-bottom: 0.08em;
     }
 
     .hero-date {
@@ -281,15 +281,14 @@
       white-space: nowrap;
     }
 
-    .ticker-gold { background: var(--gold); }
-    .ticker-gold .ticker-track span { color: #111; }
-
-    .ticker-track-reverse { animation-direction: reverse; }
-
     @keyframes slide {
       0% { transform: translateX(0); }
       100% { transform: translateX(-50%); }
     }
+
+    .ticker-gold { background: var(--gold); }
+    .ticker-gold .ticker-track span { color: #111; }
+    .ticker-track-reverse { animation-direction: reverse; }
 
     /* =============================================
        CHEVRON DIVIDER
@@ -427,6 +426,8 @@
       border-color: rgba(0,212,170,0.12);
     }
     .lineup-card:nth-child(4) .name { color: var(--teal); }
+
+    .lineup-card:nth-child(2) .icon { color: var(--gold); }
 
     /* =============================================
        PHOTO ROW (optional, graceful without)
@@ -821,8 +822,7 @@
       gap: 3.5rem;
       flex-wrap: wrap;
     }
-    .partner-logos-row a,
-    .partner-logos-row .partner-name {
+    .partner-logos-row a {
       display: flex;
       align-items: center;
       height: 40px;
@@ -937,22 +937,22 @@
         <div class="lineup-card">
           <span class="icon">🎧</span>
           <span class="name">Live DJ</span>
-          <span class="note">Sets all afternoon in the courtyard</span>
+          <span class="note">Spinning all afternoon</span>
         </div>
         <div class="lineup-card">
           <span class="icon">🎺</span>
           <span class="name">Mariachi Band</span>
-          <span class="note">Live mariachi bringing the Cinco energy</span>
+          <span class="note">Authentic celebration</span>
         </div>
         <div class="lineup-card">
           <span class="icon">🍹</span>
           <span class="name">Margs + Beer</span>
-          <span class="note">Walk-up bar with margaritas &amp; Mexican beer</span>
+          <span class="note">Walk-up bar with cold drinks</span>
         </div>
         <div class="lineup-card">
           <span class="icon">🌮</span>
           <span class="name">Tacos</span>
-          <span class="note">Street tacos to keep the party going</span>
+          <span class="note">Street tacos and more</span>
         </div>
       </div>
     </div>
@@ -1064,7 +1064,7 @@
       </a>
       <a href="https://unionmarketdc.com" target="_blank" rel="noopener" class="partner-text-logo">Union Market District</a>
       <a href="https://www.crafthospitality.com" target="_blank" rel="noopener">
-        <img src="craft-logo.png" alt="Craft Hospitality" class="partner-logo-img" loading="lazy">
+        <img src="https://images.squarespace-cdn.com/content/v1/545ab0a8e4b0f1f9150ae210/29b400ed-271c-4ff4-9f8a-dd3de7fbbc41/HOSPITALITY+%283%29.png?format=500w" alt="Craft Hospitality" class="partner-logo-img" loading="lazy">
       </a>
     </div>
   </section>
