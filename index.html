@@ -686,13 +686,13 @@
        PARTNERS
     ============================================= */
     .partners {
-      padding: 3rem 0;
+      padding: 4rem 0 3rem;
       text-align: center;
       border-top: 1px solid rgba(255,248,240,0.04);
     }
 
     .partners-label {
-      font-size: 0.5rem;
+      font-size: 0.55rem;
       font-weight: 700;
       letter-spacing: 0.35em;
       text-transform: uppercase;
@@ -819,30 +819,38 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 3.5rem;
+      gap: 4rem;
       flex-wrap: wrap;
+      padding: 0 2rem;
     }
     .partner-logos-row a {
       display: flex;
       align-items: center;
-      height: 40px;
     }
-    .partner-logo-img { height: 36px; opacity: 0.45; transition: opacity 0.3s ease; object-fit: contain; }
-    .partner-logo-img.invert { filter: brightness(0) invert(1); }
-    .partner-logo-img:hover { opacity: 0.8; }
+    .partner-logo-img {
+      height: 44px;
+      opacity: 0.35;
+      transition: opacity 0.3s ease;
+      object-fit: contain;
+    }
+    .partner-logo-img.craft {
+      height: 52px;
+    }
+    .partner-logo-img:hover { opacity: 0.7; }
     .partner-text-logo {
-      font-size: 0.85rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
       font-weight: 800;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: rgba(255,248,240,0.2);
+      color: rgba(255,248,240,0.18);
       text-decoration: none;
       transition: color 0.2s;
       display: flex;
       align-items: center;
-      height: 40px;
+      line-height: 1.2;
     }
-    .partner-text-logo:hover { color: rgba(255,248,240,0.45); }
+    .partner-text-logo:hover { color: rgba(255,248,240,0.4); }
 
     /* Competitor grid */
     .competitors-label { font-size: 0.55rem; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(255,248,240,0.2); text-align: center; margin-top: 2rem; margin-bottom: 0.75rem; }
@@ -937,22 +945,22 @@
         <div class="lineup-card">
           <span class="icon">🎧</span>
           <span class="name">Live DJ</span>
-          <span class="note">Spinning all afternoon</span>
+          <span class="note">Sets all afternoon in the courtyard</span>
         </div>
         <div class="lineup-card">
           <span class="icon">🎺</span>
           <span class="name">Mariachi Band</span>
-          <span class="note">Authentic celebration</span>
+          <span class="note">Live mariachi bringing the Cinco energy</span>
         </div>
         <div class="lineup-card">
           <span class="icon">🍹</span>
           <span class="name">Margs + Beer</span>
-          <span class="note">Walk-up bar with cold drinks</span>
+          <span class="note">Walk-up bar with margaritas &amp; Mexican beer</span>
         </div>
         <div class="lineup-card">
           <span class="icon">🌮</span>
           <span class="name">Tacos</span>
-          <span class="note">Street tacos and more</span>
+          <span class="note">Street tacos to keep the party going</span>
         </div>
       </div>
     </div>
@@ -1064,7 +1072,7 @@
       </a>
       <a href="https://unionmarketdc.com" target="_blank" rel="noopener" class="partner-text-logo">Union Market District</a>
       <a href="https://www.crafthospitality.com" target="_blank" rel="noopener">
-        <img src="https://images.squarespace-cdn.com/content/v1/545ab0a8e4b0f1f9150ae210/29b400ed-271c-4ff4-9f8a-dd3de7fbbc41/HOSPITALITY+%283%29.png?format=500w" alt="Craft Hospitality" class="partner-logo-img" loading="lazy">
+        <img src="https://images.squarespace-cdn.com/content/v1/545ab0a8e4b0f1f9150ae210/29b400ed-271c-4ff4-9f8a-dd3de7fbbc41/HOSPITALITY+%283%29.png?format=500w" alt="Craft Hospitality" class="partner-logo-img craft" loading="lazy">
       </a>
     </div>
   </section>
