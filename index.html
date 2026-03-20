@@ -741,11 +741,10 @@
 
     .final-content { position: relative; z-index: 1; }
 
-    .badge-stamp {
-      width: 160px;
-      height: 160px;
-      margin: 0 auto 2.5rem;
-      opacity: 0.85;
+    .badge-emoji {
+      font-size: 6rem;
+      margin: 0 auto 2rem;
+      line-height: 1;
     }
 
     .final h2 {
@@ -1082,30 +1081,7 @@
   <!-- ==================== FINAL CTA ==================== -->
   <section class="final">
     <div class="final-content">
-      <svg class="badge-stamp" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-        <!-- Outer pink ring -->
-        <circle cx="100" cy="100" r="96" fill="none" stroke="#FF2D78" stroke-width="4"/>
-        <!-- Inner orange ring -->
-        <circle cx="100" cy="100" r="84" fill="none" stroke="#FF7A2F" stroke-width="2"/>
-        <!-- Star -->
-        <polygon points="100,42 106,62 127,62 110,74 116,94 100,82 84,94 90,74 73,62 94,62" fill="#FFD040"/>
-        <!-- DISTRICT arched -->
-        <text fill="#FFF8F0" font-family="'Inter',sans-serif" font-size="18" font-weight="900" letter-spacing="4" text-anchor="middle">
-          <textPath href="#topArc" startOffset="50%">DISTRICT</textPath>
-        </text>
-        <defs><path id="topArc" d="M 30,100 A 70,70 0 0,1 170,100"/></defs>
-        <!-- DE MAYO -->
-        <text x="100" y="128" fill="#FFD040" font-family="'Inter',sans-serif" font-size="28" font-weight="900" text-anchor="middle" letter-spacing="2">DE MAYO</text>
-        <!-- Divider lines -->
-        <line x1="55" y1="138" x2="90" y2="138" stroke="#FF7A2F" stroke-width="1.5"/>
-        <line x1="110" y1="138" x2="145" y2="138" stroke="#FF7A2F" stroke-width="1.5"/>
-        <circle cx="100" cy="138" r="2" fill="#FF7A2F"/>
-        <!-- WASHINGTON DC arched bottom -->
-        <text fill="#E8553D" font-family="'Inter',sans-serif" font-size="12" font-weight="700" letter-spacing="3" text-anchor="middle">
-          <textPath href="#bottomArc" startOffset="50%">WASHINGTON DC</textPath>
-        </text>
-        <defs><path id="bottomArc" d="M 40,110 A 65,65 0 0,0 160,110"/></defs>
-      </svg>
+      <div class="badge-emoji">🇲🇽</div>
       <h2>
         <span class="top">Fiesta like there's</span>
         <em>no ma&ntilde;ana.</em>
