@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>District De Mayo — Cinco de Mayo at Union Market DC</title>
+  <meta name="description" content="Cinco de Mayo courtyard party at Union Market, DC. Live DJ, margaritas, Mexican beer, tacos. May 9, 2026. Free entry.">
+  <meta property="og:title" content="District De Mayo — May 9 at Union Market DC">
+  <meta property="og:description" content="Cinco de Mayo courtyard party. DJ. Margs. Beer. Tacos. Free entry.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* Warm darks instead of cool black */
+      --bg: #1C0E10;
+      --bg-warm: #231315;
+      --bg-card: #2A1618;
+
+      /* Fiesta palette */
+      --pink: #FF2D78;
+      --hot-pink: #FF1493;
+      --lime: #A8E61D;
+      --gold: #FFD040;
+      --orange: #FF7A2F;
+      --red: #E8282B;
+      --teal: #00D4AA;
+      --cyan: #00C9F2;
+      --purple: #C24CF7;
+
+      --white: #FFF8F0;
+      --cream: #FFF3E4;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--white);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    .container { max-width: 1000px; margin: 0 auto; padding: 0 clamp(1.25rem, 4vw, 2rem); }
+
+    /* =============================================
+       HERO
+    ============================================= */
+    .hero {
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Warm color wash behind hero */
+    .hero-glow {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(120px);
+      pointer-events: none;
+    }
+    .hero-glow.g1 { width: 600px; height: 600px; background: rgba(255,45,120,0.12); top: -10%; left: -10%; animation: float 10s ease-in-out infinite; }
+    .hero-glow.g2 { width: 500px; height: 500px; background: rgba(168,230,29,0.08); bottom: -5%; right: -5%; animation: float 12s ease-in-out infinite reverse; }
+    .hero-glow.g3 { width: 450px; height: 450px; background: rgba(255,208,64,0.07); top: 20%; right: 15%; animation: float 8s ease-in-out infinite 2s; }
+    .hero-glow.g4 { width: 350px; height: 350px; background: rgba(255,122,47,0.06); bottom: 25%; left: 20%; animation: float 9s ease-in-out infinite 1s; }
+
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(20px, -15px) scale(1.05); }
+    }
+
+    /* Subtle sunburst behind title */
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 150%;
+      height: 150%;
+      top: -25%;
+      left: -25%;
+      background: repeating-conic-gradient(
+        from 0deg,
+        transparent 0deg 7deg,
+        rgba(255,208,64,0.015) 7deg 9deg
+      );
+      animation: slowRotate 90s linear infinite;
+    }
+
+    @keyframes slowRotate { to { transform: rotate(360deg); } }
+
+    /* Confetti */
+    .confetti-box { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+    .confetti-bit {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      opacity: 0.55;
+      animation: fall linear infinite;
+    }
+    .confetti-bit:nth-child(8n+1) { background: var(--pink); border-radius: 50%; }
+    .confetti-bit:nth-child(8n+2) { background: var(--lime); border-radius: 1px; transform: rotate(45deg); }
+    .confetti-bit:nth-child(8n+3) { background: var(--gold); border-radius: 50%; }
+    .confetti-bit:nth-child(8n+4) { background: var(--orange); border-radius: 1px; }
+    .confetti-bit:nth-child(8n+5) { background: var(--teal); border-radius: 50%; }
+    .confetti-bit:nth-child(8n+6) { background: var(--purple); border-radius: 1px; transform: rotate(30deg); }
+    .confetti-bit:nth-child(8n+7) { background: var(--cyan); border-radius: 50%; }
+    .confetti-bit:nth-child(8n+8) { background: var(--red); border-radius: 1px; transform: rotate(60deg); }
+
+    @keyframes fall {
+      0% { transform: translateY(-5vh) rotate(0deg); opacity: 0.6; }
+      100% { transform: translateY(105vh) rotate(540deg); opacity: 0; }
+    }
+
+    .hero-content { position: relative; z-index: 2; max-width: 750px; }
+
+    .hero-badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      background: var(--lime);
+      color: #111;
+      padding: 0.55rem 1.5rem;
+      border-radius: 50px;
+      margin-bottom: 1.5rem;
+      animation: glow-pulse 2.5s ease-in-out infinite;
+    }
+
+    @keyframes glow-pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(168,230,29,0.35); }
+      50% { box-shadow: 0 0 0 10px rgba(168,230,29,0); }
+    }
+
+    .hero h1 {
+      font-family: 'Dela Gothic One', cursive;
+      font-size: clamp(3.5rem, 10vw, 7rem);
+      line-height: 0.85;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 .district {
+      display: block;
+      color: var(--white);
+      text-shadow:
+        2px 2px 0 var(--pink),
+        4px 4px 0 var(--pink),
+        5px 5px 0 rgba(255,45,120,0.6),
+        0 0 30px rgba(255,45,120,0.15);
+      -webkit-text-stroke: 1px rgba(255,45,120,0.3);
+    }
+
+    .hero h1 .de-mayo {
+      display: block;
+      background: linear-gradient(180deg, var(--gold) 0%, var(--orange) 55%, #E8553D 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: drop-shadow(2px 3px 0 rgba(196,99,61,0.4));
+    }
+
+    .hero-date {
+      font-family: 'Dela Gothic One', cursive;
+      font-size: clamp(1.1rem, 3vw, 1.5rem);
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+      text-shadow: 0 0 25px rgba(255,208,64,0.25);
+    }
+
+    .hero-location {
+      font-size: 0.95rem;
+      color: rgba(255,248,240,0.55);
+      margin-bottom: 1.75rem;
+    }
+
+    .hero-location strong { color: rgba(255,248,240,0.8); }
+
+    .hero-ctas {
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* Buttons */
+    .btn {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 1rem 2.25rem;
+      border-radius: 50px;
+      transition: all 0.25s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-pink {
+      background: linear-gradient(135deg, var(--pink), var(--hot-pink));
+      color: #fff;
+      box-shadow: 0 4px 20px rgba(255,45,120,0.3);
+    }
+    .btn-pink:hover { transform: translateY(-2px); box-shadow: 0 6px 30px rgba(255,45,120,0.4); }
+
+    .btn-lime {
+      background: var(--lime);
+      color: #111;
+      box-shadow: 0 4px 20px rgba(168,230,29,0.2);
+    }
+    .btn-lime:hover { transform: translateY(-2px); box-shadow: 0 6px 30px rgba(168,230,29,0.3); }
+
+    .btn-gold-outline {
+      background: transparent;
+      color: var(--gold);
+      border: 2px solid var(--gold);
+    }
+    .btn-gold-outline:hover { background: var(--gold); color: #111; }
+
+    /* =============================================
+       TICKER
+    ============================================= */
+    .ticker {
+      overflow: hidden;
+      padding: 0.75rem 0;
+      background: var(--pink);
+    }
+
+    .ticker-track {
+      display: flex;
+      width: max-content;
+      animation: slide 22s linear infinite;
+    }
+
+    .ticker-track span {
+      font-family: 'Dela Gothic One', cursive;
+      font-size: 0.85rem;
+      color: #fff;
+      padding: 0 1.75rem;
+      white-space: nowrap;
+    }
+
+    @keyframes slide {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* =============================================
+       CHEVRON DIVIDER
+    ============================================= */
+    .chevron {
+      height: 18px;
+      background-size: 18px 18px;
+    }
+
+    .chevron-pink {
+      background:
+        linear-gradient(135deg, var(--pink) 25%, transparent 25%) -9px 0,
+        linear-gradient(225deg, var(--pink) 25%, transparent 25%) -9px 0,
+        linear-gradient(315deg, var(--pink) 25%, transparent 25%),
+        linear-gradient(45deg, var(--pink) 25%, transparent 25%);
+      background-size: 18px 18px;
+      background-color: var(--bg);
+    }
+
+    .chevron-lime {
+      background:
+        linear-gradient(135deg, var(--lime) 25%, transparent 25%) -9px 0,
+        linear-gradient(225deg, var(--lime) 25%, transparent 25%) -9px 0,
+        linear-gradient(315deg, var(--lime) 25%, transparent 25%),
+        linear-gradient(45deg, var(--lime) 25%, transparent 25%);
+      background-size: 18px 18px;
+      background-color: var(--bg);
+    }
+
+    .chevron-gold {
+      background:
+        linear-gradient(135deg, var(--gold) 25%, transparent 25%) -9px 0,
+        linear-gradient(225deg, var(--gold) 25%, transparent 25%) -9px 0,
+        linear-gradient(315deg, var(--gold) 25%, transparent 25%),
+        linear-gradient(45deg, var(--gold) 25%, transparent 25%);
+      background-size: 18px 18px;
+      background-color: var(--bg);
+    }
+
+    .chevron-orange {
+      background:
+        linear-gradient(135deg, var(--orange) 25%, transparent 25%) -9px 0,
+        linear-gradient(225deg, var(--orange) 25%, transparent 25%) -9px 0,
+        linear-gradient(315deg, var(--orange) 25%, transparent 25%),
+        linear-gradient(45deg, var(--orange) 25%, transparent 25%);
+      background-size: 18px 18px;
+      background-color: var(--bg);
+    }
+
+    /* =============================================
+       WHAT'S HAPPENING
+    ============================================= */
+    .whats-up {
+      padding: clamp(4rem, 8vw, 6rem) 0;
+    }
+
+    .eyebrow {
+      font-size: 0.62rem;
+      font-weight: 800;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: 'Dela Gothic One', cursive;
+      font-size: clamp(2rem, 5.5vw, 3.2rem);
+      line-height: 1;
+      margin-bottom: 1.5rem;
+    }
+
+    .whats-up .section-title {
+      background: linear-gradient(135deg, var(--gold), var(--orange));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .whats-copy {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: rgba(255,248,240,0.6);
+      max-width: 560px;
+      margin-bottom: 2.5rem;
+    }
+
+    .whats-copy strong { color: var(--lime); font-weight: 700; }
+
+    /* Lineup cards — 2x2 with colored gradient backgrounds */
+    .lineup {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .lineup-card {
+      border: 1px solid rgba(255,248,240,0.08);
+      border-radius: 20px;
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .lineup-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+    }
+
+    .lineup-card .icon { font-size: 3rem; display: block; margin-bottom: 0.75rem; }
+    .lineup-card .name { font-size: 1.1rem; font-weight: 800; margin-bottom: 0.3rem; }
+    .lineup-card .note { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em; color: rgba(255,248,240,0.45); }
+
+    /* Individual card gradient backgrounds */
+    .lineup-card:nth-child(1) {
+      background: linear-gradient(135deg, rgba(0,201,242,0.12), rgba(0,50,80,0.3));
+      border-color: rgba(0,201,242,0.15);
+    }
+    .lineup-card:nth-child(1) .name { color: var(--cyan); }
+
+    .lineup-card:nth-child(2) {
+      background: linear-gradient(135deg, rgba(255,208,64,0.1), rgba(80,50,0,0.3));
+      border-color: rgba(255,208,64,0.15);
+    }
+    .lineup-card:nth-child(2) .name { color: var(--gold); }
+
+    .lineup-card:nth-child(3) {
+      background: linear-gradient(135deg, rgba(255,45,120,0.1), rgba(80,10,30,0.3));
+      border-color: rgba(255,45,120,0.12);
+    }
+    .lineup-card:nth-child(3) .name { color: var(--pink); }
+
+    .lineup-card:nth-child(4) {
+      background: linear-gradient(135deg, rgba(0,212,170,0.08), rgba(0,50,40,0.3));
+      border-color: rgba(0,212,170,0.12);
+    }
+    .lineup-card:nth-child(4) .name { color: var(--teal); }
+
+    /* =============================================
+       PHOTO ROW (optional, graceful without)
+    ============================================= */
+    .photo-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 3px;
+    }
+
+    .photo-row img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      display: block;
+    }
+
+    .photo-row .ph {
+      background: var(--bg-card);
+      aspect-ratio: 1;
+      display: block;
+      width: 100%;
+    }
+
+    /* =============================================
+       RUMBLE — the big upsell
+    ============================================= */
+    .rumble {
+      padding: clamp(4rem, 8vw, 6rem) 0;
+      position: relative;
+    }
+
+    .rumble .section-title {
+      color: var(--white);
+      text-shadow: 2px 2px 0 rgba(255,45,120,0.15);
+    }
+
+    .rumble-card {
+      margin-top: 2rem;
+      background: linear-gradient(135deg, rgba(255,45,120,0.08), rgba(255,208,64,0.05), rgba(255,122,47,0.06));
+      border: 2px solid var(--pink);
+      border-radius: 24px;
+      padding: clamp(2.5rem, 5vw, 3.5rem) clamp(1.5rem, 4vw, 3rem);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Shimmer top border */
+    .rumble-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--pink), var(--gold), var(--orange), var(--pink));
+      background-size: 200% 100%;
+      animation: shimmer 4s linear infinite;
+    }
+
+    @keyframes shimmer {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+
+    .rumble-card .ticket-badge {
+      display: inline-block;
+      font-size: 0.62rem;
+      font-weight: 800;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #fff;
+      background: var(--pink);
+      padding: 0.4rem 1rem;
+      border-radius: 50px;
+      margin-bottom: 1.5rem;
+    }
+
+    .rumble-card h3 {
+      font-family: 'Dela Gothic One', cursive;
+      font-size: clamp(2rem, 5.5vw, 3.2rem);
+      margin-bottom: 1rem;
+      color: var(--white);
+      text-shadow: 2px 2px 0 var(--pink), 3px 3px 0 rgba(255,45,120,0.4);
+    }
+
+    .rumble-card > p {
+      font-size: 1.05rem;
+      line-height: 1.65;
+      color: rgba(255,248,240,0.7);
+      max-width: 520px;
+      margin: 0 auto 1.75rem;
+    }
+
+    .rumble-features {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    .rumble-features span {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: rgba(255,248,240,0.6);
+    }
+
+    .rumble-features .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--pink);
+    }
+
+    /* =============================================
+       SCHEDULE
+    ============================================= */
+    .schedule {
+      padding: clamp(4rem, 8vw, 6rem) 0;
+    }
+
+    .schedule .section-title {
+      background: linear-gradient(135deg, var(--teal), var(--cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .timeline {
+      margin-top: 2rem;
+      padding-left: 2.5rem;
+      position: relative;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 6px;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: linear-gradient(180deg, var(--pink), var(--gold), var(--lime), var(--teal));
+      border-radius: 3px;
+    }
+
+    .tl-item {
+      position: relative;
+      padding-bottom: 2.25rem;
+    }
+
+    .tl-item::before {
+      content: '';
+      position: absolute;
+      left: -2.5rem;
+      top: 0.3rem;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      border: 3px solid;
+      background: var(--bg);
+    }
+
+    .tl-item:nth-child(1)::before { border-color: var(--pink); }
+    .tl-item:nth-child(2)::before { border-color: var(--gold); }
+    .tl-item:nth-child(3)::before { border-color: var(--lime); }
+    .tl-item:nth-child(4)::before { border-color: var(--teal); }
+
+    .tl-time {
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.25rem;
+    }
+
+    .tl-what {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 0.2rem;
+    }
+
+    .tl-desc {
+      font-size: 0.88rem;
+      color: rgba(255,248,240,0.45);
+    }
+
+    /* =============================================
+       LOCATION
+    ============================================= */
+    .location {
+      padding: clamp(4rem, 8vw, 6rem) 0;
+    }
+
+    .location .section-title {
+      background: linear-gradient(135deg, var(--lime), var(--teal));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .loc-address {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .loc-desc {
+      font-size: 0.95rem;
+      color: rgba(255,248,240,0.55);
+      line-height: 1.5;
+      margin-bottom: 1.25rem;
+    }
+
+    .loc-desc a { color: var(--lime); text-decoration: none; font-weight: 600; }
+    .loc-desc a:hover { text-decoration: underline; }
+
+    .venue-pills {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+
+    .venue-pill {
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.45rem 1rem;
+      border-radius: 50px;
+      border: 2px solid;
+    }
+
+    .venue-pill.courtyard { border-color: var(--lime); color: var(--lime); }
+    .venue-pill.dock5 { border-color: var(--pink); color: var(--pink); }
+
+    .map-box {
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(255,248,240,0.06);
+      aspect-ratio: 16/7;
+    }
+
+    .map-box iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      filter: invert(0.9) hue-rotate(180deg) saturate(0.3);
+    }
+
+    /* =============================================
+       PARTNERS
+    ============================================= */
+    .partners {
+      padding: 3rem 0;
+      text-align: center;
+      border-top: 1px solid rgba(255,248,240,0.04);
+    }
+
+    .partners-label {
+      font-size: 0.5rem;
+      font-weight: 700;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: rgba(255,248,240,0.2);
+      margin-bottom: 1rem;
+    }
+
+    .partner-row {
+      display: flex;
+      justify-content: center;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .partner-name {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(255,248,240,0.15);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .partner-name:hover { color: rgba(255,248,240,0.4); }
+
+    /* =============================================
+       FINAL CTA
+    ============================================= */
+    .final {
+      padding: clamp(5rem, 10vw, 8rem) 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .final::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 50% 50%, rgba(255,45,120,0.06) 0%, transparent 60%),
+        radial-gradient(ellipse at 30% 70%, rgba(255,208,64,0.04) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .final-content { position: relative; z-index: 1; }
+
+    .badge-stamp {
+      width: 160px;
+      height: 160px;
+      margin: 0 auto 2.5rem;
+      opacity: 0.85;
+    }
+
+    .final h2 {
+      font-family: 'Dela Gothic One', cursive;
+      font-size: clamp(2.8rem, 9vw, 6rem);
+      line-height: 0.88;
+      margin-bottom: 1rem;
+    }
+
+    .final h2 .top { display: block; color: var(--white); text-shadow: 2px 3px 0 rgba(255,45,120,0.15); }
+
+    .final h2 em {
+      font-style: italic;
+      display: block;
+      background: linear-gradient(180deg, var(--gold), var(--orange), #E8553D);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .final .when {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,248,240,0.3);
+      margin-bottom: 2.5rem;
+    }
+
+    .final-ctas {
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 1.25rem;
+      margin-top: 2.5rem;
+    }
+
+    .socials a {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .socials a:nth-child(1) { color: var(--lime); }
+    .socials a:nth-child(1):hover { color: var(--white); }
+    .socials a:nth-child(2) { color: var(--pink); }
+    .socials a:nth-child(2):hover { color: var(--white); }
+
+    footer {
+      padding: 1.5rem;
+      text-align: center;
+      font-size: 0.6rem;
+      color: rgba(255,248,240,0.1);
+      border-top: 1px solid rgba(255,248,240,0.03);
+    }
+    footer a { color: rgba(255,248,240,0.15); text-decoration: none; }
+
+    /* Rumble logo + hero image */
+    .rumble-logo { display: block; max-width: 200px; margin: 0 auto 1.25rem; }
+    .rumble-hero-img { width: 100%; max-width: 440px; margin: 0 auto 1.75rem; display: block; border-radius: 12px; border: 1px solid rgba(255,248,240,0.08); }
+
+    /* Partner logos */
+    .partner-logos-row { display: flex; justify-content: center; align-items: center; gap: 3rem; flex-wrap: wrap; }
+    .partner-logo-img { height: 32px; opacity: 0.45; transition: opacity 0.3s ease; }
+    .partner-logo-img.invert { filter: brightness(0) invert(1); }
+    .partner-logo-img:hover { opacity: 0.8; }
+
+    /* Competitor grid */
+    .competitors-label { font-size: 0.55rem; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(255,248,240,0.2); text-align: center; margin-top: 2rem; margin-bottom: 0.75rem; }
+    .competitor-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 3px; }
+    .competitor-grid img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 6px; opacity: 0.75; transition: opacity 0.3s ease; }
+    .competitor-grid img:hover { opacity: 1; }
+
+    /* =============================================
+       MOBILE
+    ============================================= */
+    @media (max-width: 700px) {
+      .lineup { grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+      .lineup-card { padding: 2rem 1rem; }
+      .photo-row { grid-template-columns: 1fr 1fr; }
+      .hero-ctas, .final-ctas { flex-direction: column; align-items: center; }
+      .hero-ctas .btn, .final-ctas .btn { width: 100%; max-width: 320px; text-align: center; display: flex; justify-content: center; }
+      .timeline { padding-left: 2rem; }
+      .tl-item::before { left: -2rem; }
+      .rumble-features { flex-direction: column; align-items: center; gap: 0.75rem; }
+      .competitor-grid { grid-template-columns: repeat(3, 1fr); }
+      .partner-logos-row { gap: 2rem; }
+      .partner-logo-img { height: 26px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==================== HERO ==================== -->
+  <section class="hero">
+    <div class="hero-glow g1"></div>
+    <div class="hero-glow g2"></div>
+    <div class="hero-glow g3"></div>
+    <div class="hero-glow g4"></div>
+    <div class="confetti-box" id="confetti"></div>
+
+    <div class="hero-content">
+      <span class="hero-badge">Free Entry &bull; No Ticket Needed</span>
+      <h1>
+        <span class="district">District</span>
+        <span class="de-mayo">De Mayo</span>
+      </h1>
+      <p class="hero-date">Saturday, May 9, 2026 &middot; 12 PM &ndash; 6:30 PM</p>
+      <p class="hero-location">Free Cinco de Mayo courtyard party at <strong>Union Market</strong>, Washington DC.</p>
+      <div class="hero-ctas">
+        <a href="#whats-up" class="btn btn-pink">What's Happening</a>
+        <a href="https://www.margaritarumble.com/wdc" target="_blank" rel="noopener" class="btn btn-gold-outline">Get Rumble Tickets &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker">
+    <div class="ticker-track">
+      <span>Margs</span><span>Tacos</span><span>Live Music</span><span>DJ</span><span>Mexican Beer</span><span>Free Entry</span><span>Union Market</span><span>May 9</span><span>DC Margarita Rumble</span>
+      <span>Margs</span><span>Tacos</span><span>Live Music</span><span>DJ</span><span>Mexican Beer</span><span>Free Entry</span><span>Union Market</span><span>May 9</span><span>DC Margarita Rumble</span>
+    </div>
+  </div>
+
+  <!-- ==================== WHAT'S HAPPENING ==================== -->
+  <section class="whats-up" id="whats-up">
+    <div class="container">
+      <p class="eyebrow">The Courtyard</p>
+      <h2 class="section-title">This is what you're<br>doing May 9.</h2>
+      <p class="whats-copy">
+        Walk in off 5th Street. The DJ is already going. Grab a marg,
+        grab a beer, grab tacos.
+        <strong>You're not watching. You're in it.</strong>
+        <br><br>
+        Free entry. Food &amp; drinks available for purchase. 21+ to drink.
+      </p>
+      <div class="lineup">
+        <div class="lineup-card">
+          <span class="icon">🎧</span>
+          <span class="name">Live DJ</span>
+          <span class="note">Sets all afternoon in the courtyard</span>
+        </div>
+        <div class="lineup-card">
+          <span class="icon">🍹</span>
+          <span class="name">Margs + Beer</span>
+          <span class="note">Walk-up bar with margaritas &amp; Mexican beer</span>
+        </div>
+        <div class="lineup-card">
+          <span class="icon">🌮</span>
+          <span class="name">Tacos</span>
+          <span class="note">Street tacos to keep the party going</span>
+        </div>
+        <div class="lineup-card">
+          <span class="icon">🎤</span>
+          <span class="name">Live Music</span>
+          <span class="note">DJ and live performances all day</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="chevron chevron-lime"></div>
+
+  <!-- PHOTO ROW -->
+  <div class="photo-row">
+    <img src="photos/margs-lined-up.jpg" alt="" onerror="this.outerHTML='<div class=ph></div>'">
+    <img src="photos/crowd-dance.jpg" alt="" onerror="this.outerHTML='<div class=ph></div>'">
+    <img src="photos/friends-margs.jpg" alt="" onerror="this.outerHTML='<div class=ph></div>'">
+    <img src="photos/bartender-action.jpg" alt="" onerror="this.outerHTML='<div class=ph></div>'">
+  </div>
+
+  <div class="chevron chevron-pink"></div>
+
+  <!-- ==================== RUMBLE ==================== -->
+  <section class="rumble" id="rumble">
+    <div class="container">
+      <p class="eyebrow">Want the Full Experience?</p>
+      <h2 class="section-title">The party's outside.<br>The competition's inside.</h2>
+      <div class="rumble-card">
+        <span class="ticket-badge">Ticketed &bull; Inside Dock5</span>
+        <img src="https://images.squarespace-cdn.com/content/v1/585981092994ca0e245807ab/1482271672931-V0WLOFMM0OWBIA1H6GRY/mr_color_rv2.png?format=750w" alt="Margarita Rumble" class="rumble-logo" loading="lazy">
+        <h3>DC Margarita Rumble</h3>
+        <img src="https://images.squarespace-cdn.com/content/v1/585981092994ca0e245807ab/1530047694065-DVON5QXU89BH5DDWC159/FullSizeRender+11.jpg" alt="Margaritas at DC Margarita Rumble" class="rumble-hero-img" loading="lazy">
+        <p>DC's best bartenders battle for the title of best margarita. You taste them all. You vote. You crown the winner.</p>
+        <div class="rumble-features">
+          <span><span class="dot"></span> Margarita tastings included</span>
+          <span><span class="dot"></span> You pick the winner</span>
+          <span><span class="dot"></span> Brand activations</span>
+        </div>
+        <a href="https://www.margaritarumble.com/wdc" target="_blank" rel="noopener" class="btn btn-pink">Grab Your Rumble Tickets &rarr;</a>
+
+        <div class="competitors-label">2026 Competitors</div>
+        <div class="competitor-grid">
+          <img src="https://images.squarespace-cdn.com/content/v1/585981092994ca0e245807ab/1765315956903-KAY9J6ZWWH6DZEPL1HJB/Screenshot%2B2025-12-09%2Bat%2B4.20.59%25E2%2580%25AFPM.png?format=300w" alt="El Presidente" loading="lazy">
+          <img src="https://images.squarespace-cdn.com/content/v1/585981092994ca0e245807ab/1765316384018-GTA2LMU8STLSIHVG4SIW/Untitled+design+%2818%29.png?format=300w" alt="THRoW Social" loading="lazy">
+          <img src="https://images.squarespace-cdn.com/content/v1/585981092994ca0e245807ab/1765316621273-43AE2O7V2WG8BR494HUU/Untitled+design+%2819%29.png?format=300w" alt="The Haymaker Bar" loading="lazy">
+          <img src="https://images.squarespace-cdn.com/content/v1/585981092994ca0e245807ab/1766176281761-CLRAS8CEK5GHJZPER5UP/Untitled+design+%2826%29.png?format=300w" alt="La Taqueria DC" loading="lazy">
+          <img src="https://images.squarespace-cdn.com/content/v1/585981092994ca0e245807ab/1768512277631-RUCEU7OD60J9FUUE4F4I/Copy+of+Untitled+Design+%282%29.png?format=300w" alt="Metrobar" loading="lazy">
+          <img src="https://images.squarespace-cdn.com/content/v1/585981092994ca0e245807ab/1768512538384-256XSZWZU2HCZYZBQX55/Copy+of+Untitled+Design+%283%29.png?format=300w" alt="Selva" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="chevron chevron-gold"></div>
+
+  <!-- ==================== SCHEDULE ==================== -->
+  <section class="schedule">
+    <div class="container">
+      <p class="eyebrow">The Rundown</p>
+      <h2 class="section-title">How the Day Goes</h2>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-time">12:00 PM</div>
+          <div class="tl-what">Doors Open</div>
+          <div class="tl-desc">Walk into the courtyard. Bar is open. The party starts.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">All Afternoon</div>
+          <div class="tl-what">DJ + Live Music + Tacos + Drinks</div>
+          <div class="tl-desc">Grab margs, Mexican beer, and tacos. Music all day.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">Same Time</div>
+          <div class="tl-what">Margarita Rumble Inside Dock5</div>
+          <div class="tl-desc">The ticketed competition is happening next door. Upgrade anytime.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">6:30 PM</div>
+          <div class="tl-what">Last Call</div>
+          <div class="tl-desc">Wrap it up. Go home happy. Tell your friends they missed out.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="chevron chevron-orange"></div>
+
+  <!-- ==================== LOCATION ==================== -->
+  <section class="location">
+    <div class="container">
+      <p class="eyebrow">Where</p>
+      <h2 class="section-title">Union Market District</h2>
+      <p class="loc-address">1309 5th St NE, Washington, DC 20002</p>
+      <p class="loc-desc">
+        The courtyard party is outside. Margarita Rumble is inside Dock5 &mdash; same complex. Walk between both all day.<br>
+        <a href="https://maps.google.com/?q=Union+Market+1309+5th+St+NE+Washington+DC+20002" target="_blank" rel="noopener">Get Directions &rarr;</a>
+      </p>
+      <div class="venue-pills">
+        <span class="venue-pill courtyard">Courtyard &mdash; Free Party</span>
+        <span class="venue-pill dock5">Dock5 &mdash; Margarita Rumble</span>
+      </div>
+      <div class="map-box">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3104.5!2d-76.9977!3d38.9085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7b8286f8b5d1f%3A0x4c0b0e7c3a5e2f0a!2sUnion%20Market!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Union Market"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTNERS -->
+  <section class="partners">
+    <p class="partners-label">Presented By</p>
+    <div class="partner-logos-row">
+      <a href="https://www.margaritarumble.com" target="_blank" rel="noopener">
+        <img src="https://images.squarespace-cdn.com/content/v1/585981092994ca0e245807ab/1482271672931-V0WLOFMM0OWBIA1H6GRY/mr_color_rv2.png?format=500w" alt="Margarita Rumble" class="partner-logo-img" loading="lazy">
+      </a>
+      <a href="https://unionmarketdc.com" target="_blank" rel="noopener">
+        <img src="https://unionmarketdc.com/wp-content/uploads/2023/02/union-market-white.svg" alt="Union Market District" class="partner-logo-img invert" loading="lazy">
+      </a>
+      <a href="https://www.crafthospitality.com" target="_blank" rel="noopener" class="partner-name">Craft Hospitality</a>
+    </div>
+  </section>
+
+  <div class="chevron chevron-pink"></div>
+
+  <!-- ==================== FINAL CTA ==================== -->
+  <section class="final">
+    <div class="final-content">
+      <svg class="badge-stamp" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <!-- Outer pink ring -->
+        <circle cx="100" cy="100" r="96" fill="none" stroke="#FF2D78" stroke-width="4"/>
+        <!-- Inner orange ring -->
+        <circle cx="100" cy="100" r="84" fill="none" stroke="#FF7A2F" stroke-width="2"/>
+        <!-- Star -->
+        <polygon points="100,42 106,62 127,62 110,74 116,94 100,82 84,94 90,74 73,62 94,62" fill="#FFD040"/>
+        <!-- DISTRICT arched -->
+        <text fill="#FFF8F0" font-family="'Inter',sans-serif" font-size="18" font-weight="900" letter-spacing="4" text-anchor="middle">
+          <textPath href="#topArc" startOffset="50%">DISTRICT</textPath>
+        </text>
+        <defs><path id="topArc" d="M 30,100 A 70,70 0 0,1 170,100"/></defs>
+        <!-- DE MAYO -->
+        <text x="100" y="128" fill="#FFD040" font-family="'Inter',sans-serif" font-size="28" font-weight="900" text-anchor="middle" letter-spacing="2">DE MAYO</text>
+        <!-- Divider lines -->
+        <line x1="55" y1="138" x2="90" y2="138" stroke="#FF7A2F" stroke-width="1.5"/>
+        <line x1="110" y1="138" x2="145" y2="138" stroke="#FF7A2F" stroke-width="1.5"/>
+        <circle cx="100" cy="138" r="2" fill="#FF7A2F"/>
+        <!-- WASHINGTON DC arched bottom -->
+        <text fill="#E8553D" font-family="'Inter',sans-serif" font-size="12" font-weight="700" letter-spacing="3" text-anchor="middle">
+          <textPath href="#bottomArc" startOffset="50%">WASHINGTON DC</textPath>
+        </text>
+        <defs><path id="bottomArc" d="M 40,110 A 65,65 0 0,0 160,110"/></defs>
+      </svg>
+      <h2>
+        <span class="top">Fiesta like there's</span>
+        <em>no ma&ntilde;ana.</em>
+      </h2>
+      <p class="when">May 9, 2026 &bull; Union Market Courtyard &bull; Washington, DC</p>
+      <div class="final-ctas">
+        <a href="https://www.margaritarumble.com/wdc" target="_blank" rel="noopener" class="btn btn-lime">Get Rumble Tickets &rarr;</a>
+      </div>
+      <div class="socials">
+        <a href="https://www.instagram.com/unionmarketdc" target="_blank" rel="noopener">@unionmarketdc</a>
+        <a href="https://www.instagram.com/margaritarumble" target="_blank" rel="noopener">@margaritarumble</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>&copy; 2026 District De Mayo &middot; A <a href="https://www.crafthospitality.com" target="_blank" rel="noopener">Craft Hospitality</a> Production</footer>
+
+  <script>
+    (function(){
+      var c=document.getElementById('confetti'),n=30;
+      for(var i=0;i<n;i++){
+        var d=document.createElement('div');
+        d.className='confetti-bit';
+        d.style.left=Math.random()*100+'%';
+        d.style.width=(Math.random()*6+5)+'px';
+        d.style.height=(Math.random()*6+5)+'px';
+        d.style.animationDuration=(Math.random()*6+5)+'s';
+        d.style.animationDelay=(Math.random()*10)+'s';
+        c.appendChild(d);
+      }
+    })();
+  </script>
+</body>
+</html>
