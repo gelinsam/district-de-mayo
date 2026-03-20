@@ -149,8 +149,9 @@
     .hero h1 {
       font-family: 'Dela Gothic One', cursive;
       font-size: clamp(3.5rem, 10vw, 7rem);
-      line-height: 0.85;
+      line-height: 0.95;
       margin-bottom: 1.5rem;
+      padding-bottom: 0.15em;
     }
 
     .hero h1 .district {
@@ -171,6 +172,7 @@
       -webkit-text-fill-color: transparent;
       background-clip: text;
       filter: drop-shadow(2px 3px 0 rgba(196,99,61,0.4));
+      padding-bottom: 0.08em;
     }
 
     .hero-date {
@@ -188,6 +190,30 @@
     }
 
     .hero-location strong { color: rgba(255,248,240,0.8); }
+
+    .hero-tags {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    .hero-tag {
+      font-size: 0.6rem;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.4rem 0.9rem;
+      border-radius: 50px;
+      border: 1.5px solid;
+    }
+
+    .hero-tag:nth-child(1) { border-color: var(--lime); color: var(--lime); }
+    .hero-tag:nth-child(2) { border-color: var(--cyan); color: var(--cyan); }
+    .hero-tag:nth-child(3) { border-color: var(--pink); color: var(--pink); }
+    .hero-tag:nth-child(4) { border-color: var(--lime); color: var(--lime); }
+    .hero-tag:nth-child(5) { border-color: var(--orange); color: var(--orange); }
 
     .hero-ctas {
       display: flex;
@@ -254,6 +280,11 @@
       padding: 0 1.75rem;
       white-space: nowrap;
     }
+
+    .ticker-gold { background: var(--gold); }
+    .ticker-gold .ticker-track span { color: #111; }
+
+    .ticker-track-reverse { animation-direction: reverse; }
 
     @keyframes slide {
       0% { transform: translateX(0); }
@@ -799,10 +830,23 @@
     ============================================= */
     @media (max-width: 700px) {
       .lineup { grid-template-columns: 1fr 1fr; gap: 0.75rem; }
-      .lineup-card { padding: 2rem 1rem; }
+      .lineup-card { padding: 1.75rem 0.75rem; }
+      .lineup-card .icon { font-size: 2.5rem; }
+      .lineup-card .name { font-size: 0.95rem; }
+      .lineup-card .note { font-size: 0.62rem; }
       .photo-row { grid-template-columns: 1fr 1fr; }
-      .hero-ctas, .final-ctas { flex-direction: column; align-items: center; }
-      .hero-ctas .btn, .final-ctas .btn { width: 100%; max-width: 320px; text-align: center; display: flex; justify-content: center; }
+      .hero-ctas, .final-ctas { flex-direction: column; align-items: center; width: 100%; }
+      .hero-ctas .btn, .final-ctas .btn {
+        width: 100%;
+        max-width: 340px;
+        text-align: center;
+        display: block;
+        padding: 1rem 1.5rem;
+        font-size: 0.7rem;
+        white-space: nowrap;
+      }
+      .hero-tags { gap: 0.4rem; }
+      .hero-tag { font-size: 0.5rem; padding: 0.3rem 0.7rem; }
       .timeline { padding-left: 2rem; }
       .tl-item::before { left: -2rem; }
       .rumble-features { flex-direction: column; align-items: center; gap: 0.75rem; }
@@ -823,16 +867,23 @@
     <div class="confetti-box" id="confetti"></div>
 
     <div class="hero-content">
-      <span class="hero-badge">Free Entry &bull; No Ticket Needed</span>
+      <span class="hero-badge">Free Entry &mdash; No Ticket Needed</span>
       <h1>
         <span class="district">District</span>
         <span class="de-mayo">De Mayo</span>
       </h1>
       <p class="hero-date">Saturday, May 9, 2026 &middot; 12 PM &ndash; 6:30 PM</p>
-      <p class="hero-location">Free Cinco de Mayo courtyard party at <strong>Union Market</strong>, Washington DC.</p>
+      <p class="hero-location">Union Market Courtyard &middot; Washington, DC</p>
+      <div class="hero-tags">
+        <span class="hero-tag">Live DJ</span>
+        <span class="hero-tag">Mariachi</span>
+        <span class="hero-tag">Margaritas</span>
+        <span class="hero-tag">Mexican Beer</span>
+        <span class="hero-tag">Tacos</span>
+      </div>
       <div class="hero-ctas">
-        <a href="#whats-up" class="btn btn-pink">What's Happening</a>
-        <a href="https://www.margaritarumble.com/wdc" target="_blank" rel="noopener" class="btn btn-gold-outline">Get Rumble Tickets &rarr;</a>
+        <a href="#whats-up" class="btn btn-pink">See What&rsquo;s Going Down</a>
+        <a href="https://www.margaritarumble.com/wdc" target="_blank" rel="noopener" class="btn btn-gold-outline">Get Margarita Rumble Tickets &rarr;</a>
       </div>
     </div>
   </section>
@@ -840,28 +891,33 @@
   <!-- TICKER -->
   <div class="ticker">
     <div class="ticker-track">
-      <span>Margs</span><span>Tacos</span><span>Live Music</span><span>DJ</span><span>Mexican Beer</span><span>Free Entry</span><span>Union Market</span><span>May 9</span><span>DC Margarita Rumble</span>
-      <span>Margs</span><span>Tacos</span><span>Live Music</span><span>DJ</span><span>Mexican Beer</span><span>Free Entry</span><span>Union Market</span><span>May 9</span><span>DC Margarita Rumble</span>
+      <span>Free Entry</span><span>&bull;</span><span>Union Market</span><span>&bull;</span><span>May 9</span><span>&bull;</span><span>Free Entry</span><span>&bull;</span><span>Union Market</span><span>&bull;</span><span>May 9</span><span>&bull;</span><span>Free Entry</span><span>&bull;</span><span>Union Market</span><span>&bull;</span><span>May 9</span><span>&bull;</span>
+    </div>
+  </div>
+  <div class="ticker ticker-gold">
+    <div class="ticker-track ticker-track-reverse">
+      <span>Margs</span><span>&bull;</span><span>Tacos</span><span>&bull;</span><span>Mariachi</span><span>&bull;</span><span>DJ</span><span>&bull;</span><span>Mexican Beer</span><span>&bull;</span><span>Margs</span><span>&bull;</span><span>Tacos</span><span>&bull;</span><span>Mariachi</span><span>&bull;</span><span>DJ</span><span>&bull;</span><span>Mexican Beer</span><span>&bull;</span>
     </div>
   </div>
 
   <!-- ==================== WHAT'S HAPPENING ==================== -->
   <section class="whats-up" id="whats-up">
     <div class="container">
-      <p class="eyebrow">The Courtyard</p>
-      <h2 class="section-title">This is what you're<br>doing May 9.</h2>
+      <p class="eyebrow">What&rsquo;s Going Down</p>
+      <h2 class="section-title">The Courtyard<br>Is the Party.</h2>
       <p class="whats-copy">
-        Walk in off 5th Street. The DJ is already going. Grab a marg,
-        grab a beer, grab tacos.
-        <strong>You're not watching. You're in it.</strong>
-        <br><br>
-        Free entry. Food &amp; drinks available for purchase. 21+ to drink.
+        Walk in. Grab a marg or a Mexican beer. Eat tacos. Dance to a live DJ. Catch the mariachi band. All of it is happening in the Union Market courtyard on Cinco de Mayo weekend. Entry is free &mdash; food and drinks available for purchase.
       </p>
       <div class="lineup">
         <div class="lineup-card">
           <span class="icon">🎧</span>
           <span class="name">Live DJ</span>
           <span class="note">Sets all afternoon in the courtyard</span>
+        </div>
+        <div class="lineup-card">
+          <span class="icon">🎺</span>
+          <span class="name">Mariachi Band</span>
+          <span class="note">Live mariachi bringing the Cinco energy</span>
         </div>
         <div class="lineup-card">
           <span class="icon">🍹</span>
@@ -872,11 +928,6 @@
           <span class="icon">🌮</span>
           <span class="name">Tacos</span>
           <span class="note">Street tacos to keep the party going</span>
-        </div>
-        <div class="lineup-card">
-          <span class="icon">🎤</span>
-          <span class="name">Live Music</span>
-          <span class="note">DJ and live performances all day</span>
         </div>
       </div>
     </div>
