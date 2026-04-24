@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>District De Mayo — Cinco de Mayo at Union Market DC</title>
+  <meta name="description" content="Cinco de Mayo celebration at Union Market Plaza, DC. Live DJ, margaritas, Mexican beer, tacos. May 9, 2026. Free entry.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cream: #F5F0EB;
+      --warm-white: #FAF7F3;
+      --black: #1A1A1A;
+      --brick: #C44536;
+      --brick-dark: #9B3429;
+      --terracotta: #D4714E;
+      --sand: #E8DDD3;
+      --grey: #8A8580;
+      --light-grey: #D1CBC4;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: var(--cream);
+      color: var(--black);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* Grain overlay */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.035;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 200px;
+    }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 clamp(1.5rem, 5vw, 3rem); }
+
+    /* Stamp typography */
+    .stamp {
+      font-family: 'Bebas Neue', sans-serif;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    /* =============================================
+       NAV
+    ============================================= */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 1.25rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      mix-blend-mode: difference;
+    }
+
+    .nav-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.1rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .nav-links { display: flex; gap: 2rem; }
+    .nav-links a {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #fff;
+      text-decoration: none;
+      transition: opacity 0.3s;
+    }
+    .nav-links a:hover { opacity: 0.6; }
+
+    /* =============================================
+       HERO
+    ============================================= */
+    .hero {
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 6rem 2rem 4rem;
+      position: relative;
+      background: var(--cream);
+    }
+
+    .hero h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(5rem, 16vw, 14rem);
+      line-height: 0.88;
+      letter-spacing: 0.04em;
+      color: var(--black);
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    .hero h1 .de-mayo {
+      display: block;
+      color: var(--brick);
+    }
+
+    .hero-sub {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(1rem, 2.5vw, 1.5rem);
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--grey);
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-detail {
+      font-size: 0.82rem;
+      color: var(--grey);
+      margin-bottom: 3rem;
+      line-height: 1.6;
+    }
+
+    .hero-tags {
+      display: flex;
+      justify-content: center;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-tag {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.18em;
+      padding: 0.45rem 1.1rem;
+      border: 1.5px solid var(--black);
+      border-radius: 0;
+      color: var(--black);
+    }
+
+    /* Buttons */
+    .btn {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.18em;
+      text-decoration: none;
+      padding: 0.9rem 2.5rem;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: none;
+      display: inline-block;
+    }
+
+    .btn-black {
+      background: var(--black);
+      color: var(--cream);
+    }
+    .btn-black:hover { background: var(--brick); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--black);
+      border: 2px solid var(--black);
+    }
+    .btn-outline:hover { background: var(--black); color: var(--cream); }
+
+    .btn-brick {
+      background: var(--brick);
+      color: #fff;
+    }
+    .btn-brick:hover { background: var(--brick-dark); }
+
+    .hero-ctas {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* =============================================
+       DIVIDER LINE
+    ============================================= */
+    .divider {
+      height: 1px;
+      background: var(--light-grey);
+      margin: 0;
+    }
+
+    /* =============================================
+       MARQUEE
+    ============================================= */
+    .marquee {
+      overflow: hidden;
+      padding: 1.2rem 0;
+      border-top: 1.5px solid var(--black);
+      border-bottom: 1.5px solid var(--black);
+      background: var(--cream);
+    }
+
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: slide 25s linear infinite;
+    }
+
+    .marquee-track span {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.1rem;
+      letter-spacing: 0.2em;
+      color: var(--black);
+      padding: 0 2rem;
+      white-space: nowrap;
+    }
+
+    .marquee-brick {
+      background: var(--brick);
+      border-color: var(--brick);
+    }
+    .marquee-brick .marquee-track span { color: #fff; }
+    .marquee-reverse .marquee-track { animation-direction: reverse; }
+
+    @keyframes slide {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* =============================================
+       CONTENT SECTIONS
+    ============================================= */
+    section { padding: clamp(4rem, 8vw, 7rem) 0; }
+
+    .eyebrow {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--brick);
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      line-height: 0.95;
+      letter-spacing: 0.04em;
+      color: var(--black);
+      margin-bottom: 1.5rem;
+    }
+
+    .section-copy {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: var(--grey);
+      max-width: 520px;
+    }
+
+    /* =============================================
+       WHAT'S HAPPENING - Asymmetric grid
+    ============================================= */
+    .whats-up {
+      background: var(--cream);
+    }
+
+    .whats-up .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .whats-left { padding-top: 2rem; }
+
+    .lineup {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .lineup-card {
+      padding: 2rem 1.5rem;
+      background: var(--warm-white);
+      border: 1px solid var(--sand);
+      position: relative;
+    }
+
+    .lineup-card .icon {
+      font-size: 2rem;
+      display: block;
+      margin-bottom: 0.75rem;
+    }
+
+    .lineup-card .name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.3rem;
+      letter-spacing: 0.12em;
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+
+    .lineup-card .note {
+      font-size: 0.72rem;
+      color: var(--grey);
+      line-height: 1.5;
+    }
+
+    /* =============================================
+       PHOTO GRID - No Plan style asymmetric
+    ============================================= */
+    .photo-grid {
+      padding: 0 clamp(1rem, 3vw, 2rem);
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      grid-template-rows: auto auto;
+      gap: 0.75rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .photo-grid .ph {
+      width: 100%;
+      aspect-ratio: 4/3;
+      border-radius: 16px;
+      overflow: hidden;
+      background: var(--sand);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .photo-grid .ph.tall {
+      grid-row: span 2;
+      aspect-ratio: auto;
+      min-height: 400px;
+    }
+
+    .photo-grid .ph-label {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.15em;
+      color: var(--light-grey);
+    }
+
+    .photo-grid img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 16px;
+    }
+
+    /* =============================================
+       RUMBLE - Full-width brick section
+    ============================================= */
+    .rumble {
+      background: var(--black);
+      color: var(--cream);
+      position: relative;
+    }
+
+    .rumble .eyebrow { color: var(--terracotta); }
+    .rumble .section-title { color: var(--cream); }
+    .rumble .section-copy { color: rgba(245,240,235,0.55); }
+
+    .rumble-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .rumble-img-area {
+      position: relative;
+    }
+
+    .rumble-img-area img {
+      width: 100%;
+      border-radius: 16px;
+      display: block;
+    }
+
+    .rumble-img-area .badge {
+      position: absolute;
+      top: -1rem;
+      right: -1rem;
+      background: var(--brick);
+      color: #fff;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      padding: 0.6rem 1.2rem;
+      border-radius: 50px;
+      transform: rotate(5deg);
+    }
+
+    .rumble-logo {
+      display: block;
+      max-width: 180px;
+      margin-bottom: 1.5rem;
+    }
+
+    .rumble-features {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      margin: 1.5rem 0 2rem;
+    }
+
+    .rumble-features span {
+      font-size: 0.78rem;
+      color: rgba(245,240,235,0.5);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .rumble-features .dot {
+      width: 6px;
+      height: 6px;
+      background: var(--brick);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .btn-cream {
+      background: var(--cream);
+      color: var(--black);
+    }
+    .btn-cream:hover { background: #fff; }
+
+    /* Competitor grid */
+    .competitors-label {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.25em;
+      color: rgba(245,240,235,0.25);
+      margin-top: 3rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .competitor-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 4px;
+    }
+
+    .competitor-grid img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: 8px;
+      opacity: 0.7;
+      transition: opacity 0.3s;
+    }
+    .competitor-grid img:hover { opacity: 1; }
+
+    /* =============================================
+       SCHEDULE - clean timeline
+    ============================================= */
+    .schedule { background: var(--warm-white); }
+
+    .schedule .container {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .timeline { display: flex; flex-direction: column; gap: 0; }
+
+    .tl-item {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 1.5rem;
+      padding: 1.75rem 0;
+      border-bottom: 1px solid var(--sand);
+    }
+
+    .tl-item:first-child { border-top: 1px solid var(--sand); }
+
+    .tl-time {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.15em;
+      color: var(--brick);
+      padding-top: 0.15rem;
+    }
+
+    .tl-what {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.3rem;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.3rem;
+    }
+
+    .tl-desc {
+      font-size: 0.78rem;
+      color: var(--grey);
+      line-height: 1.5;
+    }
+
+    /* =============================================
+       LOCATION
+    ============================================= */
+    .location { background: var(--cream); }
+
+    .location .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .loc-address {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.15em;
+      color: var(--grey);
+      margin-bottom: 1.25rem;
+    }
+
+    .loc-desc {
+      font-size: 0.85rem;
+      color: var(--grey);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .loc-desc a {
+      color: var(--brick);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .loc-desc a:hover { text-decoration: underline; }
+
+    .venue-pills {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .venue-pill {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      padding: 0.5rem 1.2rem;
+      border: 1.5px solid var(--black);
+    }
+
+    .venue-pill.dock5 {
+      background: var(--brick);
+      border-color: var(--brick);
+      color: #fff;
+    }
+
+    .map-box {
+      border-radius: 16px;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      border: 1px solid var(--sand);
+    }
+
+    .map-box iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* =============================================
+       PARTNERS
+    ============================================= */
+    .partners {
+      padding: 3rem 0;
+      text-align: center;
+    }
+
+    .partners-label {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.3em;
+      color: var(--light-grey);
+      margin-bottom: 1.5rem;
+    }
+
+    .partner-logos-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 4rem;
+      flex-wrap: wrap;
+      padding: 0 2rem;
+    }
+
+    .partner-logo-img {
+      height: 40px;
+      opacity: 0.25;
+      transition: opacity 0.3s;
+      object-fit: contain;
+      filter: grayscale(100%);
+    }
+    .partner-logo-img.craft { height: 48px; }
+    .partner-logo-img:hover { opacity: 0.5; }
+
+    .partner-text-logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .partner-text-logo img {
+      height: 32px;
+      opacity: 0.25;
+      filter: grayscale(100%);
+      transition: opacity 0.3s;
+    }
+    .partner-text-logo img:hover { opacity: 0.5; }
+
+    /* =============================================
+       FINAL CTA
+    ============================================= */
+    .final {
+      background: var(--brick);
+      color: #fff;
+      text-align: center;
+      padding: clamp(5rem, 10vw, 8rem) 2rem;
+    }
+
+    .final h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.5rem, 7vw, 5.5rem);
+      line-height: 0.95;
+      letter-spacing: 0.05em;
+      margin-bottom: 1.5rem;
+    }
+
+    .final h2 em {
+      display: block;
+      font-style: normal;
+      color: rgba(255,255,255,0.6);
+    }
+
+    .final .when {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.2em;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 2.5rem;
+    }
+
+    .final .btn-cream { margin-bottom: 2rem; }
+
+    .socials { display: flex; justify-content: center; gap: 2rem; }
+    .socials a {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.4);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .socials a:hover { color: #fff; }
+
+    /* =============================================
+       FOOTER
+    ============================================= */
+    footer {
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      color: var(--light-grey);
+      background: var(--black);
+    }
+
+    footer a { color: var(--light-grey); text-decoration: none; }
+
+    /* =============================================
+       MOBILE
+    ============================================= */
+    @media (max-width: 768px) {
+      .whats-up .container,
+      .rumble-inner,
+      .schedule .container,
+      .location .container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .photo-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .photo-grid .ph.tall {
+        grid-row: auto;
+        min-height: auto;
+        aspect-ratio: 4/3;
+      }
+
+      .hero h1 { font-size: clamp(4rem, 14vw, 8rem); }
+
+      .lineup { grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+      .lineup-card { padding: 1.5rem 1rem; }
+
+      .hero-ctas { flex-direction: column; align-items: center; }
+      .hero-ctas .btn { width: 100%; max-width: 320px; text-align: center; }
+
+      .tl-item { grid-template-columns: 90px 1fr; gap: 1rem; }
+
+      .competitor-grid { grid-template-columns: repeat(3, 1fr); }
+
+      .nav-links { display: none; }
+
+      .partner-logos-row { gap: 2rem; }
+      .partner-logo-img { height: 26px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">District De Mayo</a>
+    <div class="nav-links">
+      <a href="#whats-up">Event</a>
+      <a href="#rumble">Rumble</a>
+      <a href="#schedule">Schedule</a>
+      <a href="#location">Location</a>
+    </div>
+  </nav>
+
+  <!-- ==================== HERO ==================== -->
+  <section class="hero">
+    <p class="hero-sub">Cinco De Mayo &middot; Washington DC</p>
+    <h1>
+      <span>District</span>
+      <span class="de-mayo">De Mayo</span>
+    </h1>
+    <p class="hero-detail">Saturday, May 9, 2026 &middot; 12 PM &ndash; 6:30 PM<br>Union Market Plaza &middot; 1325 5th St NE</p>
+    <div class="hero-tags">
+      <span class="hero-tag">Live DJ</span>
+      <span class="hero-tag">Mariachi</span>
+      <span class="hero-tag">Margaritas</span>
+      <span class="hero-tag">Mexican Beer</span>
+      <span class="hero-tag">Tacos</span>
+    </div>
+    <div class="hero-ctas">
+      <a href="#whats-up" class="btn btn-black">Event Highlights</a>
+      <a href="https://www.margaritarumble.com/wdc" target="_blank" rel="noopener" class="btn btn-outline">Get Rumble Tickets &rarr;</a>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee">
+    <div class="marquee-track">
+      <span>Free Entry</span><span>&bull;</span><span>Union Market</span><span>&bull;</span><span>May 9</span><span>&bull;</span><span>Free Entry</span><span>&bull;</span><span>Union Market</span><span>&bull;</span><span>May 9</span><span>&bull;</span><span>Free Entry</span><span>&bull;</span><span>Union Market</span><span>&bull;</span><span>May 9</span><span>&bull;</span>
+    </div>
+  </div>
+  <div class="marquee marquee-brick marquee-reverse">
+    <div class="marquee-track">
+      <span>Margs</span><span>&bull;</span><span>Tacos</span><span>&bull;</span><span>Mariachi</span><span>&bull;</span><span>DJ</span><span>&bull;</span><span>Mexican Beer</span><span>&bull;</span><span>Margs</span><span>&bull;</span><span>Tacos</span><span>&bull;</span><span>Mariachi</span><span>&bull;</span><span>DJ</span><span>&bull;</span><span>Mexican Beer</span><span>&bull;</span>
+    </div>
+  </div>
+
+  <!-- ==================== WHAT'S HAPPENING ==================== -->
+  <section class="whats-up" id="whats-up">
+    <div class="container">
+      <div class="whats-left">
+        <p class="eyebrow">Event Highlights</p>
+        <h2 class="section-title">The Plaza<br>Is the Party.</h2>
+        <p class="section-copy">
+          Walk in. Grab a marg or a Mexican beer. Eat tacos. Dance to a live DJ. Catch the mariachi band. All of it is happening at Union Market Plaza on Cinco de Mayo weekend. Entry is free &mdash; food and drinks available for purchase.
+        </p>
+      </div>
+      <div class="lineup">
+        <div class="lineup-card">
+          <span class="icon">&#127911;</span>
+          <span class="name">Live DJ</span>
+          <span class="note">Sets all afternoon in the plaza</span>
+        </div>
+        <div class="lineup-card">
+          <span class="icon">&#127930;</span>
+          <span class="name">Mariachi Band</span>
+          <span class="note">Live mariachi bringing the Cinco energy</span>
+        </div>
+        <div class="lineup-card">
+          <span class="icon">&#127865;</span>
+          <span class="name">Margs + Beer</span>
+          <span class="note">Walk-up bar with margaritas &amp; Mexican beer</span>
+        </div>
+        <div class="lineup-card">
+          <span class="icon">&#127790;</span>
+          <span class="name">Tacos</span>
+          <span class="note">Street tacos to keep the party going</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTO GRID -->
+  <div class="photo-grid">
+    <div class="ph tall"><span class="ph-label">Photo</span></div>
+    <div class="ph"><span class="ph-label">Photo</span></div>
+    <div class="ph"><span class="ph-label">Photo</span></div>
+  </div>
+
+  <!-- ==================== RUMBLE ==================== -->
+  <section class="rumble" id="rumble">
+    <div class="container">
+      <div class="rumble-inner">
+        <div>
+          <p class="eyebrow">Want the Full Experience?</p>
+          <h2 class="section-title">The party's outside.<br>The competition's inside.</h2>
+
+          <img src="https://images.squarespace-cdn.com/content/v1/585981092994ca0e245807ab/1482271672931-V0WLOFMM0OWBIA1H6GRY/mr_color_rv2.png?format=750w" alt="Margarita Rumble" class="rumble-logo" loading="lazy">
+
+          <p class="section-copy">DC's best bartenders battle for the title of best margarita. You taste them all. You vote. You crown the winner.</p>
+
+          <div class="rumble-features">
+            <span><span class="dot"></span> Margarita tastings included</span>
+            <span><span class="dot"></span> You pick the winner</span>
+            <span><span class="dot"></span> Brand activations</span>
+          </div>
+
+          <a href="https://www.margaritarumble.com/wdc" target="_blank" rel="noopener" class="btn btn-cream">Grab Your Rumble Tickets &rarr;</a>
+
+          <div class="competitors-label">2026 Competitors</div>
+          <div class="competitor-grid">
+            <img src="https://images.squarespace-cdn.com/content/v1/585981092994ca0e245807ab/1765315956903-KAY9J6ZWWH6DZEPL1HJB/Screenshot%2B2025-12-09%2Bat%2B4.20.59%25E2%2580%25AFPM.png?format=300w" alt="El Presidente" loading="lazy">
+            <img src="https://images.squarespace-cdn.com/content/v1/585981092994ca0e245807ab/1765316384018-GTA2LMU8STLSIHVG4SIW/Untitled+design+%2818%29.png?format=300w" alt="THRoW Social" loading="lazy">
+            <img src="https://images.squarespace-cdn.com/content/v1/585981092994ca0e245807ab/1765316621273-43AE2O7V2WG8BR494HUU/Untitled+design+%2819%29.png?format=300w" alt="The Haymaker Bar" loading="lazy">
+            <img src="https://images.squarespace-cdn.com/content/v1/585981092994ca0e245807ab/1766176281761-CLRAS8CEK5GHJZPER5UP/Untitled+design+%2826%29.png?format=300w" alt="La Taqueria DC" loading="lazy">
+            <img src="https://images.squarespace-cdn.com/content/v1/585981092994ca0e245807ab/1768512277631-RUCEU7OD60J9FUUE4F4I/Copy+of+Untitled+Design+%282%29.png?format=300w" alt="Metrobar" loading="lazy">
+            <img src="https://images.squarespace-cdn.com/content/v1/585981092994ca0e245807ab/1768512538384-256XSZWZU2HCZYZBQX55/Copy+of+Untitled+Design+%283%29.png?format=300w" alt="Selva" loading="lazy">
+          </div>
+        </div>
+
+        <div class="rumble-img-area">
+          <img src="https://images.squarespace-cdn.com/content/v1/585981092994ca0e245807ab/1530047694065-DVON5QXU89BH5DDWC159/FullSizeRender+11.jpg" alt="Margaritas at DC Margarita Rumble" loading="lazy">
+          <span class="badge">Ticketed &bull; Dock5</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SCHEDULE ==================== -->
+  <section class="schedule" id="schedule">
+    <div class="container">
+      <div>
+        <p class="eyebrow">The Rundown</p>
+        <h2 class="section-title">How the<br>Day Goes</h2>
+      </div>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-time">12:00 PM</div>
+          <div>
+            <div class="tl-what">Doors Open</div>
+            <div class="tl-desc">Walk into the plaza. Bar is open. The party starts.</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">All Afternoon</div>
+          <div>
+            <div class="tl-what">DJ + Live Music + Tacos + Drinks</div>
+            <div class="tl-desc">Grab margs, Mexican beer, and tacos. Music all day.</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">Same Time</div>
+          <div>
+            <div class="tl-what">Margarita Rumble Inside Dock5</div>
+            <div class="tl-desc">The ticketed competition is happening next door. Upgrade anytime.</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">6:30 PM</div>
+          <div>
+            <div class="tl-what">Last Call</div>
+            <div class="tl-desc">Wrap it up. Go home happy. Tell your friends they missed out.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== LOCATION ==================== -->
+  <section class="location" id="location">
+    <div class="container">
+      <div>
+        <p class="eyebrow">Where</p>
+        <h2 class="section-title">Union Market<br>District</h2>
+        <p class="loc-address">1325 5th St NE &bull; Washington, DC 20002</p>
+        <p class="loc-desc">
+          The plaza party is outside. Margarita Rumble is inside Dock5 &mdash; same complex. Walk between both all day.<br>
+          <a href="https://maps.google.com/?q=Union+Market+1325+5th+St+NE+Washington+DC+20002" target="_blank" rel="noopener">Get Directions &rarr;</a>
+        </p>
+        <div class="venue-pills">
+          <span class="venue-pill">Plaza &mdash; Free Party</span>
+          <span class="venue-pill dock5">Dock5 &mdash; Margarita Rumble</span>
+        </div>
+      </div>
+      <div class="map-box">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3104.5!2d-76.9977!3d38.9085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7b8286f8b5d1f%3A0x4c0b0e7c3a5e2f0a!2sUnion%20Market!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Union Market"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTNERS -->
+  <div class="divider"></div>
+  <section class="partners">
+    <p class="partners-label">Presented By</p>
+    <div class="partner-logos-row">
+      <a href="https://www.margaritarumble.com" target="_blank" rel="noopener">
+        <img src="https://images.squarespace-cdn.com/content/v1/585981092994ca0e245807ab/1482271672931-V0WLOFMM0OWBIA1H6GRY/mr_color_rv2.png?format=500w" alt="Margarita Rumble" class="partner-logo-img" loading="lazy">
+      </a>
+      <a href="https://unionmarketdc.com" target="_blank" rel="noopener" class="partner-text-logo">
+        <img src="data:image/png;base64,LOGO" alt="Union Market District" style="height:32px;opacity:0.25;filter:grayscale(100%);">
+      </a>
+      <a href="https://www.crafthospitality.com" target="_blank" rel="noopener">
+        <img src="https://images.squarespace-cdn.com/content/v1/545ab0a8e4b0f1f9150ae210/29b400ed-271c-4ff4-9f8a-dd3de7fbbc41/HOSPITALITY+%283%29.png?format=500w" alt="Craft Hospitality" class="partner-logo-img craft" loading="lazy">
+      </a>
+    </div>
+  </section>
+
+  <!-- ==================== FINAL CTA ==================== -->
+  <section class="final">
+    <div class="badge-emoji" style="font-size:3rem;margin-bottom:1.5rem;">&#127474;&#127485;</div>
+    <h2>
+      <span>Come Hungry. Leave Happy.</span>
+      <em>&iexcl;Vamos!</em>
+    </h2>
+    <p class="when">May 9, 2026 &bull; Union Market Plaza &bull; 1325 5th St NE &bull; Washington, DC</p>
+    <a href="https://www.margaritarumble.com/wdc" target="_blank" rel="noopener" class="btn btn-cream">Get Rumble Tickets &rarr;</a>
+    <div class="socials">
+      <a href="https://www.instagram.com/unionmarketdc" target="_blank" rel="noopener">@unionmarketdc</a>
+      <a href="https://www.instagram.com/margaritarumble" target="_blank" rel="noopener">@margaritarumble</a>
+    </div>
+  </section>
+
+  <footer>&copy; 2026 District De Mayo &middot; A <a href="https://www.crafthospitality.com" target="_blank" rel="noopener">Craft Hospitality</a> Production</footer>
+
+</body>
+</html>
